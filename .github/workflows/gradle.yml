@@ -30,8 +30,8 @@ jobs:
       with:
         arguments: build
     - name: Install
-      uses: gradle/gradle-build-action@java -jar ./artifacts/app-card-delivery.jar &
+      run: java -jar ./artifacts/app-card-delivery.jar &
     - name: BuildScript1
-      uses: gradle/gradle-build-action@chmod +x gradlew
+      run: chmod +x gradlew
     - name: BuildScript2
-      uses: gradle/gradle-build-action@./gradlew test --info -Dselenide.headless=true
+      run: ./gradlew test --info -Dselenide.headless=true
